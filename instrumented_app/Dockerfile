@@ -1,4 +1,7 @@
-FROM golang:onbuild
+FROM scratch
+RUN mkdir -p /app
 COPY instrumented_app /app
+WORKDIR /app
 EXPOSE 8080 
-ENTRYPOINT ["/app/instrumented_app"]
+ENTRYPOINT ["/instrumented_app"]
+
